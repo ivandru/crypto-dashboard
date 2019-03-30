@@ -35,18 +35,18 @@ export class CoinInfoAdapter implements Adapter<CoinInfo> {
     const rawData = item.RAW[fiat];
 
     return new CoinInfo(
-      item.Id,
-      item.FullName,
-      item.Name,
+      item.CoinInfo.Id,
+      item.CoinInfo.FullName,
+      item.CoinInfo.Name,
       rawData.FROMSYMBOL,
-      item.ImageUrl,
-      item.Url,
-      item.Algorithm,
-      item.ProofType,
-      item.BlockNumber,
+      item.CoinInfo.ImageUrl,
+      item.CoinInfo.Url,
+      item.CoinInfo.Algorithm,
+      item.CoinInfo.ProofType,
+      item.CoinInfo.BlockNumber,
       new FiatInfo(
         rawData.TOSYMBOL,
-        rawData.PRICE,
+        parseFloat(rawData.PRICE).toFixed(2),
       ),
     );
   }

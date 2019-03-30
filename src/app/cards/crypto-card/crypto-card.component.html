@@ -1,0 +1,11 @@
+<section class="crypto__card" (click)="openDetails()">
+  <h3 class="crypto-name__text">{{crypto.fullName}}</h3>
+  <div class="crypto-icon__container">
+    <img src="{{crypto.imageUrl}}" alt="Image not found."/>
+  </div>
+  <div>
+    <span class="crypto-price__text">{{ crypto.fiat.price }}</span>
+    <span class="crypto-fiat__text">{{ crypto.fiat.symbol }}</span>
+    <span class="crypto-block__text">Block #{{ crypto.blockNumber }}</span>
+  </div>
+</section>

@@ -1,9 +1,9 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {CoinInfo, CoinInfoAdapter} from '../../model/coin-info.model';
+import {CoinInfo, CoinInfoAdapter} from '../../models/coin-info.model';
 import {map} from 'rxjs/operators';
-import {Candlestick, CandlestickAdapter} from '../../model/candlestick.model';
+import {Candlestick, CandlestickAdapter} from '../../models/candlestick.model';
 
 @Injectable({
   providedIn: 'root'
@@ -22,7 +22,7 @@ export class ApiService {
     const url = `${this.baseApiUrl}/top/totalvolfull?limit=${limit}&tsym=${fiat}`;
     return this.http.get(url).pipe(
       // Adapt all elements to CoinInfo
-      map((data: {Data: any[]}) => data.Data.map(item => this.coinAdapter.adapt(item.Data))),
+      map((data: {Data: any[]}) => data.Data.map(item => this.coinAdapter.adapt(item))),
     );
   }
 
@@ -30,7 +30,7 @@ export class ApiService {
     const url = `${this.baseApiUrl}/top/mktcapfull?limit=${limit}&tsym=${fiat}`;
     return this.http.get(url).pipe(
       // Adapt all elements to CoinInfo
-      map((data: {Data: any[]}) => data.Data.map(item => this.coinAdapter.adapt(item.Data))),
+      map((data: {Data: any[]}) => data.Data.map(item => this.coinAdapter.adapt(item))),
     );
   }
 
@@ -43,7 +43,7 @@ export class ApiService {
     const url = `${this.baseApiUrl}/histo${period}?limit=${limit}&tsym=${fiat}&fsym=${crypto}`;
     return this.http.get(url).pipe(
       // Adapt all elements to Candlestick
-      map((data: {Data: any[]}) => data.Data.map(item => this.candlestickAdapter.adapt(item.Data))),
+      map((data: {Data: any[]}) => data.Data.map(item => this.candlestickAdapter.adapt(item))),
     );
   }
 

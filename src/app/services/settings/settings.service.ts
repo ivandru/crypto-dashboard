@@ -1,5 +1,5 @@
 import {Injectable} from '@angular/core';
-import {AvailableFiat} from '../../model/settings.model';
+import {AvailableFiat} from '../../models/settings.model';
 
 @Injectable({
   providedIn: 'root'
@@ -9,7 +9,6 @@ export class SettingsService {
   public fiat: AvailableFiat = AvailableFiat.USD;
 
   constructor() {
-
   }
 
   toggleCurrency() {

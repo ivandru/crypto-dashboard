@@ -1,0 +1,75 @@
+.root__container {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 0.5fr auto;
+  position: relative;
+}
+
+.main__header {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 0.75fr 0.75fr 0.75fr;
+  grid-template-rows: 1fr;
+  box-shadow: 0.8rem 0.8rem 2rem rgba(0, 0, 255, 0.14);
+  height: 6rem;
+  margin: 0;
+  text-align: center;
+  align-items: center;
+  transition: background-color 500ms linear;
+  animation: fadein 1s ease-in-out 0ms 1;
+}
+
+.main__header-text {
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  display: inline;
+  margin: 0.5rem 0;
+  font-weight: 900;
+}
+
+.main__container-bg {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  opacity: 0;
+  background: white;
+  transition: opacity 300ms linear;
+}
+
+.main__footer {
+  background: transparent;
+  position: absolute;
+  bottom: 1rem;
+  left: 1.5rem;
+  z-index: 100;
+}
+
+.main__footer-text {
+  letter-spacing: 0.1rem;
+  color: white;
+}
+
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+@media (min-width: 481px) and (max-width: 767px) {
+  .main__header {
+    grid-template-columns: 1fr;
+  }
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+@media (min-width: 320px) and (max-width: 480px) {
+  .main__header {
+    grid-template-columns: 1fr;
+  }
+}
