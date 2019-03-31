@@ -7,6 +7,10 @@ jobs:
       branches:
         only: master
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "9a:4d:bc:06:da:a9:d9:b5:d8:20:08:90:e4:6c:de:91"
+
       - checkout
 
       # Download and cache dependencies
