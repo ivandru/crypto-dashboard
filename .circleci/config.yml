@@ -30,4 +30,4 @@ jobs:
           command: ng build --prod --base-href "https://ivandru.github.io/crypto-dashboard/"
 
       - run:
-          command: ngh --branch gh-pages --repo=$GH_REPO --name=$GH_USERNAME --email=$GH_EMAIL -d dist/crypto-dasboard
+          command: ngh --branch gh-pages
