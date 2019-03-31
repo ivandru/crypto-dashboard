@@ -1,4 +1,4 @@
-# CryptoDasboard
+# CryptoDasboard [![CircleCI](https://circleci.com/gh/ivandru/crypto-dashboard/tree/master.svg?style=svg)](https://circleci.com/gh/ivandru/crypto-dashboard/tree/master)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.7.
 
