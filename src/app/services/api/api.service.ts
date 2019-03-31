@@ -11,7 +11,7 @@ import {Candlestick, CandlestickAdapter} from '../../models/candlestick.model';
 export class ApiService {
 
   public baseImageUrl = 'https://cryptocompare.com';
-  private baseApiUrl = 'https://min-api.cryptocompare.com/data';
+  public baseApiUrl = 'https://min-api.cryptocompare.com/data';
 
   constructor(public http: HttpClient,
               public coinAdapter: CryptoInfoAdapter,

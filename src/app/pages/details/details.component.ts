@@ -19,13 +19,13 @@ export class DetailsComponent implements OnInit {
   candlesticks: Candlestick[];
   candlesticksPeriod: 'minute' | 'hour' | 'day' = 'day';
   cryptoInfo: CryptoInfo;
-  private timeDeltas: any = {
+  timeDeltas: any = {
     minute: 1000 * 60 * 60,
     hour: 1000 * 60 * 60 * 24,
     day: 1000 * 60 * 60 * 24 * 30,
   };
-  private mainCandlesticks: CandlesticksData[];
-  private brushCandlesticks: CandlesticksData[];
+  mainCandlesticks: CandlesticksData[];
+  brushCandlesticks: CandlesticksData[];
 
   constructor(
     public activeRouter: ActivatedRoute,
