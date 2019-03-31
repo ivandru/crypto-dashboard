@@ -17,7 +17,7 @@ jobs:
             - v1-dependencies-
 
       - run: sudo npm install -g @angular/cli@^6.0.0-rc.2
-      - run: sudo npm install -g ngh
+      - run: npm install angular-cli-ghpages
       - run: npm install
 
       - save_cache:
@@ -30,4 +30,4 @@ jobs:
           command: ng build --prod --base-href "https://ivandru.github.io/crypto-dashboard/"
 
       - run:
-          command: ngh --branch gh-pages
+          command: npx angular-cli-ghpages --dir=dist/crypto-dasboard --branch gh-pages
