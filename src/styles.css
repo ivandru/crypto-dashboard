@@ -80,8 +80,8 @@ pre {
 
 .flat-button {
   cursor: pointer;
-  /*padding: 7px 12px;*/
-  /*margin: 6px 12px 6px 0;*/
+  padding: 7px 12px;
+  margin: 6px 12px 6px 0;
   display: inline-block;
   background-color: white;
   transition: 0.5s all ease;

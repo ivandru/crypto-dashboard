@@ -34,4 +34,4 @@ jobs:
           command: ng build --prod --base-href "https://ivandru.github.io/crypto-dashboard/"
 
       - run:
-          command: npx angular-cli-ghpages --dir=dist/crypto-dasboard --branch gh-pages
+          command: npx angular-cli-ghpages --dir=dist/crypto-dasboard --branch gh-pages --no-silent
