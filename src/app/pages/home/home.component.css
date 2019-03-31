@@ -26,3 +26,15 @@
     grid-template-columns: 1fr;
   }
 }
+
+.hidden {
+  cursor: pointer;
+  display: none;
+  transition: 1s all ease;
+}
+
+.selected {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 900;
+}

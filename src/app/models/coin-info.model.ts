@@ -9,7 +9,7 @@ export class FiatInfo {
   }
 }
 
-export class CoinInfo {
+export class CryptoInfo {
   constructor(
     public id: string,
     public fullName: string,
@@ -28,13 +28,13 @@ export class CoinInfo {
 @Injectable({
   providedIn: 'root'
 })
-export class CoinInfoAdapter implements Adapter<CoinInfo> {
+export class CryptoInfoAdapter implements Adapter<CryptoInfo> {
 
-  adapt(item: any): CoinInfo {
+  adapt(item: any): CryptoInfo {
     const fiat = Object.getOwnPropertyNames(item.RAW)[0];
     const rawData = item.RAW[fiat];
 
-    return new CoinInfo(
+    return new CryptoInfo(
       item.CoinInfo.Id,
       item.CoinInfo.FullName,
       item.CoinInfo.Name,
@@ -46,6 +46,36 @@ export class CoinInfoAdapter implements Adapter<CoinInfo> {
       item.CoinInfo.BlockNumber,
       new FiatInfo(
         rawData.TOSYMBOL,
+        parseFloat(rawData.PRICE).toFixed(2),
+      ),
+    );
+  }
+
+}
+
+@Injectable({
+  providedIn: 'root'
+})
+export class ShortCoinInfoAdapter implements Adapter<CryptoInfo> {
+
+  adapt(item: any): CryptoInfo {
+    const c = Object.getOwnPropertyNames(item.DISPLAY)[0];
+    const fiat = Object.getOwnPropertyNames(item.DISPLAY[c])[0];
+    const disData = item.DISPLAY[c][fiat];
+    const rawData = item.RAW[c][fiat];
+
+    return new CryptoInfo(
+      '',
+      rawData.FROMSYMBOL,
+      rawData.FROMSYMBOL,
+      disData.FROMSYMBOL,
+      disData.IMAGEURL,
+      '',
+      '',
+      '',
+      0,
+      new FiatInfo(
+        disData.TOSYMBOL,
         parseFloat(rawData.PRICE).toFixed(2),
       ),
     );

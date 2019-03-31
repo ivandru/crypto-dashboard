@@ -2,9 +2,10 @@
 
   <!-- Header -->
   <header class="main__header">
-    <h1 class="main__header-text"></h1>
-    <h1 class="main__header-text">CRYPTO DASHBOARD</h1>
-    <h3 class="main__header-text" (click)="toggleFiat()">{{settings.fiat}}</h3>
+    <div></div>
+    <!--<button class="main__header-text sim-button button11 logo" (click)="goToHome()">CRYPTO DASHBOARD</button>-->
+    <div (click)="goToHome()" class="logo">CRYPTO DASHBOARD</div>
+    <h3 (click)="toggleFiat()" class="main__header-text flat-button">{{fiat}}</h3>
   </header>
 
   <!-- Main -->

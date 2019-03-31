@@ -1,5 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {SettingsService} from './services/settings/settings.service';
+import {Router} from '@angular/router';
+import {AvailableFiat} from './models/settings.model';
 
 @Component({
   selector: 'app-root',
@@ -8,15 +10,26 @@ import {SettingsService} from './services/settings/settings.service';
 })
 export class AppComponent implements OnInit {
 
-  constructor(public settings: SettingsService) {
+  fiat: AvailableFiat;
+
+  constructor(
+    public settings: SettingsService,
+    public router: Router
+  ) {
 
   }
 
   ngOnInit() {
+    this.settings.fiat.subscribe((value) => {
+      this.fiat = value;
+    });
   }
 
   toggleFiat() {
     this.settings.toggleCurrency();
   }
 
+  goToHome() {
+    this.router.navigateByUrl('');
+  }
 }

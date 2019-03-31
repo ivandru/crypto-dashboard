@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {ApiService} from '../../services/api/api.service';
 import {SettingsService} from '../../services/settings/settings.service';
-import {CoinInfo} from '../../models/coin-info.model';
+import {CryptoInfo} from '../../models/coin-info.model';
+import {AvailableFiat} from '../../models/settings.model';
 
 @Component({
   selector: 'app-home',
@@ -10,7 +11,8 @@ import {CoinInfo} from '../../models/coin-info.model';
 })
 export class HomeComponent implements OnInit {
 
-  cryptos: CoinInfo[];
+  cryptos: CryptoInfo[];
+  fiat: AvailableFiat;
 
   constructor(
     public api: ApiService,
@@ -19,9 +21,17 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.api.getTopByVolume(this.settings.fiat, 99).subscribe((cryptos: CoinInfo[]) => {
+    this.settings.fiat.subscribe((value) => {
+      this.fiat = value;
+      this.loadCryptos();
+    });
+  }
+
+
+  loadCryptos() {
+    console.log(this.fiat);
+    this.api.getTopByVolume(this.fiat, 99).subscribe((cryptos: CryptoInfo[]) => {
       this.cryptos = cryptos;
     });
-
   }
 }

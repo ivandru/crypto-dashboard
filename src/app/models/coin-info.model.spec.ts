@@ -1,7 +1,7 @@
-import { CoinInfo } from './coin-info.model';
+import {CryptoInfo} from './coin-info.model';
 
-describe('CoinInfo', () => {
+describe('CryptoInfo', () => {
   it('should create an instance', () => {
-    expect(new CoinInfo()).toBeTruthy();
+    expect(new CryptoInfo()).toBeTruthy();
   });
 });

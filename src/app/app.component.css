@@ -1,10 +1,12 @@
 .root__container {
   width: 100vw;
   height: 100vh;
+  top: 0;
+  left: 0;
   display: grid;
   grid-template-columns: auto;
   grid-template-rows: 0.5fr auto;
-  position: relative;
+  position: absolute;
 }
 
 .main__header {

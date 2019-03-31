@@ -1,6 +1,6 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {CoinInfo} from '../../models/coin-info.model';
+import {CryptoInfo} from '../../models/coin-info.model';
 import {ApiService} from '../../services/api/api.service';
 
 @Component({
@@ -11,7 +11,7 @@ import {ApiService} from '../../services/api/api.service';
 export class CryptoCardComponent implements OnInit, OnDestroy {
 
   @Input()
-  crypto: CoinInfo;
+  crypto: CryptoInfo;
 
   constructor(
     public api: ApiService,
@@ -27,7 +27,7 @@ export class CryptoCardComponent implements OnInit, OnDestroy {
   }
 
   openDetails() {
-    this.router.navigateByUrl(`/${crypto}`);
+    this.router.navigateByUrl(`/candlesticks/${this.crypto.symbol}`);
   }
 
 }
