@@ -31,4 +31,4 @@ jobs:
 
       - run:
           command: |
-            ngh --token $TOKEN
+            ngh --token $TOKEN --branch gh-pages
