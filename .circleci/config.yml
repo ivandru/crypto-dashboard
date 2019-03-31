@@ -34,4 +34,12 @@ jobs:
           command: ng build --prod --base-href "https://ivandru.github.io/crypto-dashboard/"
 
       - run:
+          name: Set GitHub Email
+          command: git config --global user.email "$GH_EMAIL"
+
+      - run:
+          name: Set GitHub Username
+          command: git config --global user.name "$GH_USERNAME"
+
+      - run:
           command: npx angular-cli-ghpages --dir=dist/crypto-dasboard --branch gh-pages --no-silent
