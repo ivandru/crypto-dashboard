@@ -30,7 +30,7 @@ export class HomeComponent implements OnInit {
 
   loadCryptos() {
     console.log(this.fiat);
-    this.api.getTopByVolume(this.fiat, 99).subscribe((cryptos: CryptoInfo[]) => {
+    this.api.getTopByVolume(this.fiat, 50).subscribe((cryptos: CryptoInfo[]) => {
       this.cryptos = cryptos;
     });
   }
