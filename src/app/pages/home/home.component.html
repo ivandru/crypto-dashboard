@@ -1,4 +1,7 @@
 <div class="main__container">
-  <input (ngModelChange)="loadCryptos()" [(ngModel)]="fiat" class="hidden" type="radio">
-  <app-crypto-card *ngFor="let crypto of cryptos" [crypto]="crypto"></app-crypto-card>
+  <div class="main__header">
+    <h1>
+      Monitor your favourite cryptocurrencies
+    </h1>
+  </div>
 </div>

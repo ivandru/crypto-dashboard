@@ -7,12 +7,6 @@
   height: 100%;
 }
 
-.main__header {
-  background: url('./../../../assets/home-bg.svg');
-  background-size: cover;
-  width: 100vmax;
-  height: 100vmax;
-}
 /*
   ##Device = Low Resolution Tablets, Mobiles (Landscape)
   ##Screen = B/w 481px to 767px

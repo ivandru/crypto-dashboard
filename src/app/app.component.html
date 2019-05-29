@@ -3,14 +3,13 @@
   <!-- Header -->
   <header class="main__header">
     <div></div>
-    <!--<button class="main__header-text sim-button button11 logo" (click)="goToHome()">CRYPTO DASHBOARD</button>-->
     <div (click)="goToHome()" class="logo">CRYPTO DASHBOARD</div>
     <h3 (click)="toggleFiat()" class="main__header-text flat-button">{{fiat}}</h3>
   </header>
 
   <!-- Main -->
   <main class="main__container">
-    <div class="main__container-bg"></div>
+    <!--    <div class="main__container-bg"></div>-->
     <router-outlet></router-outlet>
   </main>
 

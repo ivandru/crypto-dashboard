@@ -1,6 +1,6 @@
 .root__container {
-  width: 100vw;
-  height: 100vh;
+  width: 100vmax;
+  height: 100vmax;
   top: 0;
   left: 0;
   display: grid;
@@ -8,6 +8,19 @@
   grid-template-rows: 0.5fr auto;
   position: absolute;
 }
+
+/*.root__container {*/
+/*  width: 100vmax;*/
+/*  height: 100vmax;*/
+/*  top: 0;*/
+/*  left: 0;*/
+/*  display: flex;*/
+/*  flex-direction: column;*/
+/*  justify-content: flex-start;*/
+/*  !*grid-template-columns: auto;*!*/
+/*  !*grid-template-rows: repeat(auto-fill, 0.5fr);*!*/
+/*  position: absolute;*/
+/*}*/
 
 .main__header {
   width: 100%;
